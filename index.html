@@ -5,6 +5,11 @@
 h1 {
     text-align: center
 } 
+
+.frame {
+    width:100%;
+    height:100%;
+}
 </style>
     
     
@@ -62,6 +67,7 @@ else {
   else {
       Embed.srcdoc = Query
   }
+  Embed.class = "frame"
   GetId("Container").appendChild(Embed)
     
     
