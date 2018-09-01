@@ -12,6 +12,7 @@ h1 {
 function GetId(Id) {
     return document.getElementById(Id)
 }
+    
 var ThisURL = window.location.href
 ThisURL = decodeURIComponent(ThisURL)
 var Query = ThisURL.slice(ThisURL.indexOf("?") + 1)
@@ -21,13 +22,30 @@ GetId("Header").innerHTML = "Error Loading Embed. No Query Parameter Specified."
 else {
   //Valid query. Lets go!
   Query = Query.trim()
-  if (!(Query.indexOf("https://") === 0)) {
-    if (Query.indexOf("http://") === 0) {
+    
+  //Convert http:// to https://
+  if (Query.indexOf("http://") === 0) {
         Query = Query.slice(7)
         Query = "https://" + Query
+  }
+  if (!(Query.indexOf("https://") === 0)) {
+
+      
+    var check = 0
+    //253 maximum domain length
+    if (Query.length < 254) {
+    check = 1
     }
-    //Query = "https://" + Query
-    //We can now detect if this is for src or srcdoc
+    //The ending .(one character) takes 2 characters
+    if (Query.indexOf(".") < 252) {
+    check = 1
+    }
+      
+    //Check if it passed
+    if (check === 0) {
+    Query = "https://" + Query
+    }
+      
   }
     
   var Embed = document.createElement("iframe")
