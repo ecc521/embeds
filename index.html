@@ -16,7 +16,7 @@ var ThisURL = window.location.href
 ThisURL = decodeURIComponent(ThisURL)
 var Query = ThisURL.slice(ThisURL.indexOf("?") + 1)
 if (ThisURL === Query) {
-GetId("Header").innerHTML = "Error Loading Embed. No URL Specified."
+GetId("Header").innerHTML = "Error Loading Embed. No Query Parameter Specified."
 }
 else {
   //Valid query. Lets go!
@@ -30,7 +30,7 @@ else {
     
   var Embed = document.createElement("iframe")
   Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-naviagtion"
-    
+  
     
     
     
