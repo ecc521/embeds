@@ -54,7 +54,7 @@ else {
 
     
   var Embed = document.createElement("iframe")
-  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-naviagtion"
+  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups"
   //No same origin
   if (Query.indexOf("https://") === 0) {
       Embed.src = Query
