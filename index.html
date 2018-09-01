@@ -3,7 +3,10 @@
 <title>Rivers.run Embeds</title>
 <h1 id="Header">Rivers.Run Embeds<h1>
 <div id="Container"></div>
-    
+    <p>Not Working? Check that the embedded page allows the following:<br><br>
+Supports Https<br>
+Allows rivers.run as a frame ancestor<br>
+    </p>
 <style>
 h1 {
     text-align: center
@@ -33,8 +36,8 @@ else {
     
   //Convert http:// to https://
   if (Query.indexOf("http://") === 0) {
-        //Query = Query.slice(7)
-        //Query = "https://" + Query
+        Query = Query.slice(7)
+        Query = "https://" + Query
   }
   if (!(Query.indexOf("https://") === 0)) {
       
