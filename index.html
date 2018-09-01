@@ -24,13 +24,21 @@ else {
   if (!(Query.indexOf("https://") === 0)) {
     if (Query.indexOf("http://") === 0) {
         Query = Query.slice(7)
+        Query = "https://" + Query
     }
-    Query = "https://" + Query
+    //Query = "https://" + Query
+    //We can now detect if this is for src or srcdoc
   }
     
   var Embed = document.createElement("iframe")
   Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-naviagtion"
-  
+  //No same origin
+  if (Query.indexOf("https://") === 0) {
+      Embed.src = Query
+  }
+  else {
+      Embed.srcdoc = Query
+  }
     
     
     
