@@ -41,14 +41,18 @@ else {
     if (Query.length < 254) {
     check = 1
     }
+      console.log(check)
+
     //The ending .(one character) takes 2 characters
     if (Query.indexOf(".") < 252) {
     check = 1
     }
+      console.log(check)
+
     if (!(/^(?:(?:(?:[a-zA-z\-]+)\:\/{1,3})?(?:[a-zA-Z0-9])(?:[a-zA-Z0-9-\.]){1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+|\[(?:(?:(?:[a-fA-F0-9]){1,4})(?::(?:[a-fA-F0-9]){1,4}){7}|::1|::)\]|(?:(?:[0-9]{1,3})(?:\.[0-9]{1,3}){3}))(?:\:[0-9]{1,5})?$/.test(Query))) {
     check = 1
     }
-
+console.log(check)
       
     //Check if it passed
     if (check === 0) {
