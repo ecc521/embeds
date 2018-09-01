@@ -1,4 +1,13 @@
 <h1 id="Header">Rivers.Run Embeds<h1>
+
+    
+<style>
+h1 {
+    text-align: center
+} 
+</style>
+    
+    
 <script>
 function GetId(Id) {
     return document.getElementById(Id)
@@ -12,10 +21,13 @@ GetId("Header").innerHTML = "Error Loading Embed. No URL Specified."
 else {
   //Valid query. Lets go!
   Query = Query.trim()
-  if (!((Query.indexOf("http://") === 0) || (Query.indexOf("https://") === 0))) {
-    Query = "http://" + Query
+  if (!(Query.indexOf("https://") === 0)) {
+    if (Query.indexOf("http://") === 0) {
+        Query = Query.slice(7)
+    }
+    Query = "https://" + Query
   }
-  //We will force HTTPS later. If it doesn't redirect, OH WELL.
+  
   
   
   
