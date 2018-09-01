@@ -29,8 +29,8 @@ else {
         Query = "https://" + Query
   }
   if (!(Query.indexOf("https://") === 0)) {
-
       
+    //If they just don't put the http:// or https:// we can do some things to try and identify what they mean.
     var check = 0
     //253 maximum domain length
     if (Query.length < 254) {
@@ -40,13 +40,20 @@ else {
     if (Query.indexOf(".") < 252) {
     check = 1
     }
+    if (Query.indexOf("<script>") !== -1) {
+    check = 1
+    }
+    if (Query.indexOf("<br>") !== -1) {
+    check = 1
+    }
       
     //Check if it passed
     if (check === 0) {
     Query = "https://" + Query
-    }
+    } 
       
   }
+
     
   var Embed = document.createElement("iframe")
   Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-naviagtion"
