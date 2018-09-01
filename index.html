@@ -1,5 +1,6 @@
 <link rel="shortcut icon" type="image/x-icon" href="/resources/32pxDrop.png" />
 
+<title>Rivers.run Embeds</title>
 <h1 id="Header">Rivers.Run Embeds<h1>
 <div id="Container"></div>
     
@@ -74,12 +75,9 @@ console.log(check)
       Embed.srcdoc = Query
   }
   Embed.className = "frame"
-  try {
   GetId("Container").appendChild(Embed)
-  }
-  catch (e) {
-      GetId("Header").innerHTML = e
-  }
+  GetId("Header").innerHTML = ""
+  
     
     
     
