@@ -22,16 +22,17 @@ else {
     //If they just don't put the http:// or https:// we can do some things to try and identify what they mean.
     var check = 0
     //253 maximum domain length
-    if (Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?")).length > 253) {
+    //Query's length before ? or /
+    if (Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?"))).length > 253) {
     check = 1
     }
 
     //The ending .(one character) takes 2 characters
-    if (Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?")).indexOf(".") > 251) {
+    if (Query.indexOf(".") > 251) {
     check = 1
     }
 
-    if (!(/^(?:(?:(?:[a-zA-z\-]+)\:\/{1,3})?(?:[a-zA-Z0-9])(?:[a-zA-Z0-9-\.]){1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+|\[(?:(?:(?:[a-fA-F0-9]){1,4})(?::(?:[a-fA-F0-9]){1,4}){7}|::1|::)\]|(?:(?:[0-9]{1,3})(?:\.[0-9]{1,3}){3}))(?:\:[0-9]{1,5})?$/.test(Query.slice(0, Query.indexOf("/"))))) {
+    if (!(/^(?:(?:(?:[a-zA-z\-]+)\:\/{1,3})?(?:[a-zA-Z0-9])(?:[a-zA-Z0-9-\.]){1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+|\[(?:(?:(?:[a-fA-F0-9]){1,4})(?::(?:[a-fA-F0-9]){1,4}){7}|::1|::)\]|(?:(?:[0-9]{1,3})(?:\.[0-9]{1,3}){3}))(?:\:[0-9]{1,5})?$/.test(Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?")))))) {
     check = 1
     }
    
