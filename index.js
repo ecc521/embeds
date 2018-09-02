@@ -61,7 +61,8 @@ console.log(check)
       Embed.src = Query
   }
   else {
-      Embed.srcdoc = Query
+      Embed.srcdoc = Query.split("_").join(" ")
+      //For some werid reason, spaces are being replaced by underscores.
   }
   Embed.addEventListener("error", function(e) {console.log(e)})
   GetId("Container").appendChild(Embed)
