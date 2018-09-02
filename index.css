@@ -5,6 +5,7 @@ h1 {
 /*Make height attribute work*/
 html,body{
     height: 100%;
+    margin: 0px;
 }
 
 iframe {
