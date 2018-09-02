@@ -71,7 +71,7 @@ console.log(check)
   }
   Embed.addEventListener("error", ErrorHandler);
   GetId("Container").appendChild(Embed)
-  GetId("Header").innerHTML = ""
+  GetId("Header").style.display = "none"
  
     
     
