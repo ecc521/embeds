@@ -2,6 +2,11 @@ function GetId(Id) {
     return document.getElementById(Id)
 }
     
+function ErrorHandler(e) {
+    console.log("An error occoured")
+    console.log(e)
+}
+
 var ThisURL = window.location.href
 ThisURL = decodeURIComponent(ThisURL)
 var Query = ThisURL.slice(ThisURL.indexOf("?") + 1)
@@ -64,7 +69,7 @@ console.log(check)
       Embed.srcdoc = Query.split("_").join(" ")
       //For some werid reason, spaces are being replaced by underscores.
   }
-  Embed.addEventListener("error", function(e) {console.log(e)})
+  Embed.addEventListener("error", ErrorHandler);
   GetId("Container").appendChild(Embed)
   GetId("Header").innerHTML = ""
  
