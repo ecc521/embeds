@@ -31,7 +31,7 @@ else {
     if (Query.indexOf(".") > 251) {
     check = 1
     }
-
+    console.log(Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?"))))
     if (!(/^(?:(?:(?:[a-zA-z\-]+)\:\/{1,3})?(?:[a-zA-Z0-9])(?:[a-zA-Z0-9-\.]){1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+|\[(?:(?:(?:[a-fA-F0-9]){1,4})(?::(?:[a-fA-F0-9]){1,4}){7}|::1|::)\]|(?:(?:[0-9]{1,3})(?:\.[0-9]{1,3}){3}))(?:\:[0-9]{1,5})?$/.test(Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?")))))) {
     check = 1
     }
