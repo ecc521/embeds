@@ -54,10 +54,10 @@ console.log(check)
   else {
       Embed.srcdoc = Query
   }
-  Embed.className = "frame"
+  Embed.addEventListener("error", function(e) {console.log(e)})
   GetId("Container").appendChild(Embed)
   GetId("Header").innerHTML = ""
-  
+ 
     
     
     
