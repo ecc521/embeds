@@ -3,7 +3,7 @@ h1 {
 } 
   
 /*Make height attribute work*/
-html,body{
+html,body,div{
     height: 100%;
     margin: 0px;
 }
