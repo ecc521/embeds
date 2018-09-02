@@ -22,12 +22,12 @@ else {
     //If they just don't put the http:// or https:// we can do some things to try and identify what they mean.
     var check = 0
     //253 maximum domain length
-    if (Query.length > 253) {
+    if (Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?")).length > 253) {
     check = 1
     }
 
     //The ending .(one character) takes 2 characters
-    if (Query.indexOf(".") > 251) {
+    if (Query.slice(0, Math.min(Query.indexOf("/"), Query.indexOf("?")).indexOf(".") > 251) {
     check = 1
     }
 
