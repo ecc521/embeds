@@ -1,11 +1,28 @@
 function GetId(Id) {
     return document.getElementById(Id)
 }
+
+function LoadEmbed() {
+  var Embed = document.createElement("iframe")
+  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups"
+  //No same origin
+  if (Query.indexOf("https://") === 0) {
+      Embed.src = Query
+  }
+  else {
+      Embed.srcdoc = Query.split("_").join(" ")
+      //For some werid reason, spaces are being replaced by underscores.
+  }
+  GetId("Container").appendChild(Embed)
+  GetId("Header").style.display = "none"
+}
+
+
 var ThisURL = window.location.href
 ThisURL = decodeURIComponent(ThisURL)
 var Query = ThisURL.slice(ThisURL.indexOf("?") + 1)
 if (ThisURL === Query) {
-GetId("Header").innerHTML = "Error Loading Embed. No Query Parameter Specified."
+GetId("Header").innerHTML = "No Query Parameter Specified."
 }
 else {
   //Valid query. Lets go!
@@ -49,22 +66,7 @@ else {
     Query = "https://" + Query
     } 
       
-  }
-
-function LoadEmbed() {
-  var Embed = document.createElement("iframe")
-  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups"
-  //No same origin
-  if (Query.indexOf("https://") === 0) {
-      Embed.src = Query
-  }
-  else {
-      Embed.srcdoc = Query.split("_").join(" ")
-      //For some werid reason, spaces are being replaced by underscores.
-  }
-  GetId("Container").appendChild(Embed)
-  GetId("Header").style.display = "none"
-} 
+  } 
     
     
     
