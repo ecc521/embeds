@@ -65,7 +65,9 @@ else {
     if (check === 0) {
     Query = "https://" + Query
     } 
+    GetId("Header").innerHTML = "Embed Ready..."
       
+    
   } 
     
 }
