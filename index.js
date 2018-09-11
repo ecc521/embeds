@@ -66,10 +66,10 @@ else {
     } 
       
     if (Query.indexOf("https://") === 0) {
-    GetId("Header").innerHTML = "This embed is a URL embed for " + Query + ". Click the button above to load the embed."
+    GetId("Info").innerHTML = "This embed is a URL embed for " + Query + ". Click the button above to load the embed."
     }
     else {
-    GetId("Header").innerHTML = "This embed is a HTML embed containing the following code:\n" + Query + "\n\nClick the button above to load the embed."
+    GetId("Info").innerHTML = "This embed is a HTML embed containing the following code:\n" + Query + "\n\nClick the button above to load the embed."
     }
     
   }    
