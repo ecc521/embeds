@@ -76,6 +76,7 @@ else {
   }  
     if (Query.indexOf("https://") === 0) {
     GetId("Load").innerHTML = "Click here to load " + Query
+    GetId("Info").innerHTML = ""
     }
     else {
     GetId("Load").innerHTML = "Click here to load the HTML embed (HTML code shown below)"
