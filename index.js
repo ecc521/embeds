@@ -6,7 +6,7 @@ function RemoveElement(Id) {
 }
 function LoadEmbed() {
   var Embed = document.createElement("iframe")
-  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox"
+  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentations"
   //No same origin
   if (Query.indexOf("https://") === 0) {
       Embed.src = Query
