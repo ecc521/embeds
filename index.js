@@ -72,14 +72,14 @@ else {
     Query = "https://" + Query
     } 
       
+    
+  }  
     if (Query.indexOf("https://") === 0) {
     GetId("Info").innerHTML = "This embed is a URL embed for " + Query + ". Click the button above to load the embed."
     }
     else {
     GetId("Info").innerHTML = "This embed is a HTML embed containing the following code:\n" + Query + "\n\nClick the button above to load the embed."
     }
-    
-  }    
 }
 
 GetId("Load").addEventListener("click", LoadEmbed)
