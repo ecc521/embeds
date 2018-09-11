@@ -75,7 +75,7 @@ else {
     
   }  
     if (Query.indexOf("https://") === 0) {
-    GetId("Load").innerHTML = "Click here to load " + Query
+    GetId("Load").innerHTML = "Click here to load " + Query + " (may take a few seconds)"
     GetId("Info").innerHTML = ""
     }
     else {
