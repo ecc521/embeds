@@ -19,6 +19,8 @@ function LoadEmbed() {
   RemoveElement("Header")
   RemoveElement("Info")
   RemoveElement("Load")
+  RemoveElement("NotWorking")
+
 }
 
 
