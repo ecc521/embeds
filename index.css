@@ -1,7 +1,9 @@
 h1, p {
     text-align: center;
 } 
-  
+button {
+    width:100%;
+} 
 /*Make height attribute work*/
 html,body,div{
     height: 100%;
