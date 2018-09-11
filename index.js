@@ -1,7 +1,6 @@
 function GetId(Id) {
     return document.getElementById(Id)
 }
-
 function LoadEmbed() {
   var Embed = document.createElement("iframe")
   Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups"
@@ -65,9 +64,16 @@ else {
     if (check === 0) {
     Query = "https://" + Query
     } 
-    GetId("Header").innerHTML = "Embed Ready..."
       
+    if (Query.indexOf("https://") === 0) {
+    GetId("Header").innerHTML = "This embed is a URL embed for " + Query + ". Click the button above to load the embed."
+    }
+    else {
+    GetId("Header").innerHTML = "This embed is a HTML embed containing the following code:\n" + Query + "\n\nClick the button above to load the embed."
+    }
     
-  } 
-    
+  }    
 }
+
+GetId("Load").addEventListener("click", LoadEmbed)
+
