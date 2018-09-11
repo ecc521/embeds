@@ -1,6 +1,9 @@
 function GetId(Id) {
     return document.getElementById(Id)
 }
+function RemoveElement(Id) {
+    GetId(Id).parentNode.removeChild(GetId(Id))
+}
 function LoadEmbed() {
   var Embed = document.createElement("iframe")
   Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups"
@@ -13,7 +16,9 @@ function LoadEmbed() {
       //For some werid reason, spaces are being replaced by underscores.
   }
   GetId("Container").appendChild(Embed)
-  GetId("Header").style.display = "none"
+  RemoveElement("Header")
+  RemoveElement("Info")
+  RemoveElement("Load")
 }
 
 
