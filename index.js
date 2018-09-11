@@ -6,10 +6,15 @@ function RemoveElement(Id) {
 }
 function LoadEmbed() {
   var Embed = document.createElement("iframe")
-  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups"
+  Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox"
   //No same origin
   if (Query.indexOf("https://") === 0) {
       Embed.src = Query
+      //Just to be careful
+      if (Query.indexOf("rivers.run") === -1) {
+      Embed.sandbox += " allow-same-origin"
+      //It's origin isn't rivers.run - we can allow same-origin
+      }
   }
   else {
       Embed.srcdoc = Query.split("_").join(" ")
