@@ -1,12 +1,6 @@
 function GetId(Id) {
     return document.getElementById(Id)
 }
-    
-function ErrorHandler(e) {
-    console.log("An error occoured")
-    console.log(e)
-}
-
 var ThisURL = window.location.href
 ThisURL = decodeURIComponent(ThisURL)
 var Query = ThisURL.slice(ThisURL.indexOf("?") + 1)
@@ -49,7 +43,6 @@ else {
    
       
 
-console.log(check)
       
     //Check if it passed
     if (check === 0) {
@@ -58,7 +51,7 @@ console.log(check)
       
   }
 
-    
+function LoadEmbed() {
   var Embed = document.createElement("iframe")
   Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups"
   //No same origin
@@ -69,10 +62,9 @@ console.log(check)
       Embed.srcdoc = Query.split("_").join(" ")
       //For some werid reason, spaces are being replaced by underscores.
   }
-  Embed.addEventListener("error", ErrorHandler);
   GetId("Container").appendChild(Embed)
   GetId("Header").style.display = "none"
- 
+} 
     
     
     
