@@ -15,3 +15,7 @@ iframe {
     height:100%;
     border: 0;
 }
+
+#NotWorking {
+    font-size: 12px;
+}
