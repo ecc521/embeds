@@ -82,7 +82,7 @@ else {
     }
     else {
     GetId("Load").innerHTML = "Click here to load the HTML embed (HTML code shown below)"
-    GetId("Info").innerHTML = Query
+    GetId("Info").textContent = String(Query)
     }
     GetId("Header").innerHTML = "Embed Ready!"
 
