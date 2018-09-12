@@ -31,6 +31,7 @@ ThisURL = decodeURIComponent(ThisURL)
 var Query = ThisURL.slice(ThisURL.indexOf("?") + 1)
 if (ThisURL === Query) {
 GetId("Header").innerHTML = "No Query Parameter Specified."
+RemoveElement("Load")
 }
 else {
   //Valid query. Lets go!
