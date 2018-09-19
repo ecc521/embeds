@@ -77,15 +77,6 @@ else {
       
     
   }  
-    if (Query.indexOf("https://") === 0) {
-    GetId("Load").innerHTML = "Click here to load the URL embed (URL listed below). It may take a few seconds for content to appear."
-    GetId("Info").textContent = Query
-    }
-    else {
-    GetId("Load").innerHTML = "Click here to load the HTML embed (HTML code shown below)"
-    GetId("Info").textContent = String(Query).split("_").join(" ")
-    }
-    GetId("Header").innerHTML = "Embed Ready!"
 
 }
 
