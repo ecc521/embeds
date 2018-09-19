@@ -80,3 +80,5 @@ else {
 }
 
 LoadEmbed()
+
+window.addEventListener("error", function(e){console.warn(e)})
