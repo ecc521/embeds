@@ -20,11 +20,19 @@ function LoadEmbed() {
   Embed.onload = function(e){console.log(e)}
   GetId("Container").appendChild(Embed)
     
+  iframe.onload = function(){
+   try{
+        this[0].contentDocument;
+   }
+   catch(err){
+        console.log(err)
+   }
+    }
   RemoveElement("Header")
   RemoveElement("Info")
   RemoveElement("NotWorking")
 
-}
+    }
 
 
 var ThisURL = window.location.href
