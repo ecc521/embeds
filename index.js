@@ -17,7 +17,7 @@ function LoadEmbed() {
       Embed.srcdoc = Query.split("_").join(" ")
       //For some werid reason, spaces are being replaced by underscores.
   }
-  Embed.onerror = function(e){console.warn(e)}
+  Embed.onload = function(e){console.log(e)}
   GetId("Container").appendChild(Embed)
     
   RemoveElement("Header")
@@ -82,5 +82,3 @@ else {
 }
 
 LoadEmbed()
-
-window.addEventListener("error", function(e){console.warn(e)})
