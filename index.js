@@ -12,22 +12,12 @@ function LoadEmbed() {
       Embed.src = Query
       //No worries..... Nobody else should be hosting on rivers.run, and you cannot embed pure HTML with this flag, as it isn't given below.
       Embed.sandbox += " allow-same-origin"
+      console.log(fetch(Query))
   }
   else {
       Embed.srcdoc = Query.split("_").join(" ")
       //For some werid reason, spaces are being replaced by underscores.
   }
-  Embed.onload = function(e){console.log(e)}
-  GetId("Container").appendChild(Embed)
-    
-  iframe.onload = function(){
-   try{
-        this[0].contentDocument;
-   }
-   catch(err){
-        console.log(err)
-   }
-    }
   RemoveElement("Header")
   RemoveElement("Info")
   RemoveElement("NotWorking")
