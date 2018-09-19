@@ -89,5 +89,4 @@ else {
 
 }
 
-GetId("Load").addEventListener("click", LoadEmbed)
-
+LoadEmbed()
