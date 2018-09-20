@@ -20,7 +20,7 @@ function LoadEmbed() {
   RemoveElement("Header")
   RemoveElement("Info")
   RemoveElement("NotWorking")
-
+  GetId("Container").appendChild(Embed)
     }
 
 
