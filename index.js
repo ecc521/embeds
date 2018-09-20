@@ -10,7 +10,7 @@ function LoadEmbed() {
   //No same origin
   if (Query.indexOf("https://") === 0) {
       Embed.src = Query
-      //No worries..... Nobody else should be hosting on rivers.run, and you cannot embed pure HTML with this flag, as it isn't given below.
+      //No worries..... Only embed stuff should be on embeds.rivers.run, and you cannot embed pure HTML with this flag, as it isn't given below.
       Embed.sandbox += " allow-same-origin"
   }
   else {
