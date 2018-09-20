@@ -12,7 +12,6 @@ function LoadEmbed() {
       Embed.src = Query
       //No worries..... Nobody else should be hosting on rivers.run, and you cannot embed pure HTML with this flag, as it isn't given below.
       Embed.sandbox += " allow-same-origin"
-      console.log(fetch(Query))
   }
   else {
       Embed.srcdoc = Query.split("_").join(" ")
