@@ -81,10 +81,10 @@ LoadEmbed()
 
 
 try {
+//Delete any storage that has been added by pure HTML embeds.
 localStorage.clear()
 indexedDB.webkitGetDatabaseNames().onsuccess = function(event) {
   Array.prototype.forEach.call(event.target.result, indexedDB.deleteDatabase.bind(indexedDB));
-}
-       
+}     
 }
 catch (e) {}
