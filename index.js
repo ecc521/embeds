@@ -7,10 +7,9 @@ function RemoveElement(Id) {
 function LoadEmbed() {
   var Embed = document.createElement("iframe")
   Embed.sandbox = "allow-scripts allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation"
-  //No same origin
+  //Same origin not allowed for HTML embeds, but allowed for URL embeds.
   if (Query.indexOf("https://") === 0) {
       Embed.src = Query
-      //No worries..... Only embed stuff should be on embeds.rivers.run, and you cannot embed pure HTML with this flag, as it isn't given below.
       Embed.sandbox += " allow-same-origin"
   }
   else {
@@ -79,3 +78,13 @@ else {
 }
 
 LoadEmbed()
+
+
+try {
+localStorage.clear()
+indexedDB.webkitGetDatabaseNames().onsuccess = function(event) {
+  Array.prototype.forEach.call(event.target.result, indexedDB.deleteDatabase.bind(indexedDB));
+}
+       
+}
+catch (e) {}
